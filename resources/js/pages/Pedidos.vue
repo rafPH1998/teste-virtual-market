@@ -74,7 +74,7 @@
           <tr class="bg-gray-50 border-b border-gray-100">
             <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">#</th>
             <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Fornecedor</th>
-            <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Data</th>
+            <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Data criação</th>
             <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
             <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Itens</th>
             <th class="text-left px-5 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Total</th>
@@ -88,7 +88,7 @@
             <td class="px-5 py-4 text-gray-500">
               <div class="flex items-center gap-1.5">
                 <Calendar class="w-3.5 h-3.5 text-gray-400" />
-                {{ formatarData(p.data_pedido) }}
+                {{ formatarData(p.created_at)}}
               </div>
             </td>
             <td class="px-5 py-4">
@@ -255,7 +255,7 @@ function labelStatus(s) {
 
 function formatarData(d) {
   if (!d) return '—'
-  return new Date(d + 'T00:00:00').toLocaleDateString('pt-BR')
+  return new Date(d).toLocaleDateString('pt-BR')
 }
 
 function formatarMoeda(v) {

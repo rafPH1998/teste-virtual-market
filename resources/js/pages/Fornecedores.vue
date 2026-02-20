@@ -77,10 +77,6 @@
             </td>
             <td class="px-5 py-4">
               <div class="flex justify-end gap-2">
-                <button @click="abrirModal(f)"
-                  class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium border border-gray-200 rounded-lg hover:bg-gray-50 text-gray-600 transition">
-                  <Pencil class="w-3 h-3" /> Editar
-                </button>
                 <button @click="excluir(f)"
                   class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-red-50 text-red-600 border border-red-100 rounded-lg hover:bg-red-100 transition">
                   <Trash2 class="w-3 h-3" />

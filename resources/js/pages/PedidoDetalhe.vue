@@ -66,7 +66,7 @@
               <div class="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1 flex items-center gap-1">
                 <Calendar class="w-3 h-3" /> Data do Pedido
               </div>
-              <div class="font-semibold text-gray-800">{{ formatarData(pedido.data_pedido) }}</div>
+              <div class="font-semibold text-gray-800">{{ formatarData(pedido.created_at) }}</div>
             </div>
             <div v-if="pedido.observacoes" class="col-span-2">
               <div class="text-xs text-gray-400 font-semibold uppercase tracking-wide mb-1 flex items-center gap-1">
@@ -275,7 +275,7 @@ function labelStatus(s) {
 
 function formatarData(d) {
   if (!d) return '—'
-  return new Date(d + 'T00:00:00').toLocaleDateString('pt-BR')
+  return new Date(d).toLocaleDateString('pt-BR')
 }
 
 function formatarDatetime(d) {

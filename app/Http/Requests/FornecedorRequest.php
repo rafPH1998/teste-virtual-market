@@ -18,7 +18,7 @@ class FornecedorRequest extends FormRequest
 
         return [
             'nome'     => ['required', 'string', 'max:255'],
-            'cnpj'     => ['required', 'string', 'max:18', Rule::unique('fornecedores', 'cnpj')->ignore($fornecedorId)->whereNull('deleted_at')],
+            'cnpj'     => ['required', 'string', 'max:18'],
             'email'    => ['required', 'email', 'max:255'],
             'telefone' => ['required', 'string', 'max:20'],
             'status'   => ['required', Rule::in(['ativo', 'inativo'])],
@@ -30,7 +30,6 @@ class FornecedorRequest extends FormRequest
         return [
             'nome.required'     => 'O nome é obrigatório.',
             'cnpj.required'     => 'O CNPJ é obrigatório.',
-            'cnpj.unique'       => 'Este CNPJ já está cadastrado.',
             'email.required'    => 'O e-mail é obrigatório.',
             'email.email'       => 'Informe um e-mail válido.',
             'telefone.required' => 'O telefone é obrigatório.',

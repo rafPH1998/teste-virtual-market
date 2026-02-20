@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
 
-class VincularFornecedoresEmMassa implements ShouldQueue
+class DesvincularFornecedoresEmMassa implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -26,14 +26,13 @@ class VincularFornecedoresEmMassa implements ShouldQueue
     {
         $produto = Produto::findOrFail($this->produtoId);
 
-        // syncWithoutDetaching mantém vínculos existentes e adiciona novos
-        $produto->fornecedores()->syncWithoutDetaching($this->fornecedorIds);
+        $produto->fornecedores()->detach($this->fornecedorIds);
 
-        Log::info("VincularFornecedoresEmMassa: produto {$this->produtoId} vinculado a " . count($this->fornecedorIds) . " fornecedores.");
+        Log::info("DesvincularFornecedoresEmMassa: produto {$this->produtoId} desvinculado de " . count($this->fornecedorIds) . " fornecedores.");
     }
 
     public function failed(\Throwable $exception): void
     {
-        Log::error("VincularFornecedoresEmMassa FAILED produto {$this->produtoId}: {$exception->getMessage()}");
+        Log::error("DesvincularFornecedoresEmMassa FAILED produto {$this->produtoId}: {$exception->getMessage()}");
     }
 }

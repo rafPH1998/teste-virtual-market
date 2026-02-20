@@ -67,7 +67,7 @@ class FornecedorController extends Controller
     // Lista todos os fornecedores sem paginação (para selects)
     public function all(): JsonResponse
     {
-        $fornecedores = Fornecedor::ativo()->orderBy('nome')->get(['id', 'nome', 'cnpj', 'status']);
+        $fornecedores = Fornecedor::ativo()->orderBy('nome')->get(['id', 'nome', 'cnpj', 'status', 'created_at']);
 
         return response()->json($fornecedores);
     }
