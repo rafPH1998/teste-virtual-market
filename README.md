@@ -49,6 +49,23 @@ composer install
 php artisan key:generate
 ```
 
+7. Ajeite as variaveis de banco de dados:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=db 
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
+8. Rode as migrations
+
+```
+php artisan migrate
+```
+
 # Caso gere erro ao rodar composer install, é importante saber o id que se encontra o seu usuário
 
 ![alt text](image-2.png)
@@ -69,7 +86,7 @@ npm install
 npm run dev
 ```
 
-## Acesse o sistema
+## Acesse o sistema e comece a usar
 
 ```
 http://localhost:8007/fornecedores
