@@ -1,8 +1,6 @@
 # Sistema Web de Gestão de Produtos e Fornecedores
 
 
-# Backend Innovareti
-
 > **Nota importante:** É **obrigatório** ter o **Docker** e o **Docker Compose** instalados e em execução para rodar este projeto localmente.
 
 ## Pré-requisitos
